@@ -188,6 +188,7 @@ class User(Player):
 class Game:
     def __init__(self, size=6):
         self.size = size
+        self.lens = [3, 2, 2, 1, 1, 1, 1]
         pl = self.random_board()
         co = self.random_board()
         co.hid = True
@@ -202,10 +203,9 @@ class Game:
         return board
 
     def random_place(self):
-        lens = [3, 2, 2, 1, 1, 1, 1]
         board = Board(size=self.size)
         attempts = 0
-        for l in lens:
+        for l in self.lens:
             while True:
                 attempts += 1
                 if attempts > 2000:
