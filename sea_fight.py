@@ -1,5 +1,5 @@
 from random import randint
-
+import time
 
 class Dot:
     def __init__(self, x, y):
@@ -130,10 +130,12 @@ class Board:
                     return False
                 else:
                     print("Ранен!")
+                    time.sleep(2)
                     return True
 
         self.field[d.x][d.y] = "Т"
         print("Мимо!")
+        time.sleep(2)
         return False
 
     def begin(self):
@@ -161,6 +163,7 @@ class Player:
 class AI(Player):
     def ask(self):
         d = Dot(randint(0, 5), randint(0, 5))
+        time.sleep(5)
         print(f"Ход компьютера: {d.x + 1} {d.y + 1}")
         return d
 
