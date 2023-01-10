@@ -127,6 +127,7 @@ class Board:
                     self.count += 1
                     self.contour(ship, verb=True)
                     print("Убит!")
+                    time.sleep(2)
                     return False
                 else:
                     print("Ранен!")
